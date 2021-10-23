@@ -14,7 +14,7 @@ namespace WBL
         Task<TipoInquilinoEntity> GetById(TipoInquilinoEntity entity);
         Task<DBEntity> Update(TipoInquilinoEntity entity);
     }
-    public class TipoInquilinoService
+    public class TipoInquilinoService : ITipoInquilinoService
     {
         private readonly IDataAccess sql;
 

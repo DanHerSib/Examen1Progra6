@@ -2,7 +2,6 @@
 @model WebApp.Pages.TipoInquilino.GridModel
 @{
 }
-
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
@@ -23,28 +22,25 @@
                         <tboby>
                             @foreach (var item in Model.GridList)
                             {
-                                <tr>
-                                    <td>@item.Id_TipoInquilino</td>
-                                    <td>@item.Descripcion</td>
-                                    <td>@item.Estado</td>
-                                    <td>
-                                        <a class="btn btn-primary" asp-page="Delete" asp-route-id="@item.Id_TipoInquilino"><i class='bx bx-delete-alt'></i></a>
+                            <tr>
+                                <td>@item.Id_TipoInquilino</td>
+                                <td>@item.Descripcion</td>
+                                <td>@item.Estado</td>
+                                <td>
+                                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.Id_TipoInquilino"><i class='bx bx-edit-alt'></i></a>
 
-                                        <button type="button" class="btn btn-danger" onclick="TipoInquilinoGrid.OnClickEliminar(@item.Id_TipoInquilino)">
-                                            <i class='bx bx-trash'></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                    <button type="button" class="btn btn-danger" onclick="TipoInquilinoGrid.OnClickEliminar(@item.Id_TipoInquilino)">
+                                        <i class='bx bx-trash'></i>
+                                    </button>
+                                </td>
+                            </tr>
                             }
                         </tboby>
                     </table>
-
                 </div>
             </div>
         </div>
     </div>
-
-
 </div>
 
 @section Scripts{
@@ -52,7 +48,5 @@
     <script>
         var MensajeApp = "@Html.Raw(Model.Mensaje)";
     </script>
-
     <script defer src="~/App/TipoInquilino/Grid.js"></script>
-
 }

@@ -16,16 +16,10 @@ namespace BD
         public DataAccess(IConfiguration _Config)
         {
             config = _Config;
-
-
         }
 
-
         public SqlConnection DbConnection => new SqlConnection(
-            new SqlConnectionStringBuilder(config.GetConnectionString("Conn")).ConnectionString
-
-            );
-
+            new SqlConnectionStringBuilder(config.GetConnectionString("Conn")).ConnectionString);
 
         public async Task<IEnumerable<T>> QueryAsync<T>(string sp, object Param = null, int? Timeout = null)
         {
@@ -39,15 +33,12 @@ namespace BD
                         , commandTimeout: Timeout);
 
                     return await result;
-
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         public async Task<IEnumerable<dynamic>> QueryAsync(string sp, object Param = null, int? Timeout = null)
@@ -62,12 +53,10 @@ namespace BD
                         , commandTimeout: Timeout);
 
                     return await result;
-
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
 
@@ -85,15 +74,12 @@ namespace BD
                         , commandTimeout: Timeout, splitOn: split);
 
                     return await result;
-
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         public async Task<IEnumerable<T>> QueryAsync<T, B, C>(string sp, string split, object Param = null, int? Timeout = null)
@@ -108,15 +94,12 @@ namespace BD
                         , commandTimeout: Timeout, splitOn: split);
 
                     return await result;
-
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         public async Task<IEnumerable<T>> QueryAsync<T, B, C, D>(string sp, string split, object Param = null, int? Timeout = null)
@@ -131,15 +114,12 @@ namespace BD
                         , commandTimeout: Timeout, splitOn: split);
 
                     return await result;
-
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         public async Task<IEnumerable<T>> QueryAsync<T, B, C, D, E>(string sp, string split, object Param = null, int? Timeout = null)
@@ -154,15 +134,12 @@ namespace BD
                         , commandTimeout: Timeout);
 
                     return await result;
-
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         public async Task<IEnumerable<T>> QueryAsync<T, B, C, D, E, F>(string sp, string split, object Param = null, int? Timeout = null)

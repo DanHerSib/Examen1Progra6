@@ -6,6 +6,6 @@ namespace Entity
     {
         public int? Id_TipoInquilino { get; set; }
         public string Descripcion { get; set; }
-        public int? Estado { get; set; }
+        public bool Estado { get; set; }
     }
 }
