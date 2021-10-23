@@ -1,6 +1,20 @@
 ﻿CREATE PROCEDURE [dbo].[TipoInquilinoInsertar]
-	@param1 int = 0,
-	@param2 int
-AS
-	SELECT @param1, @param2
-RETURN 0
+	@Descripcion VARCHAR(250),
+	@Estado BIT
+
+AS BEGIN
+SET NOCOUNT ON
+	BEGIN TRANSACTION TRANSAC
+		BEGIN TRY
+			INSERT INTO dbo.TipoInquilino(Descripcion, Estado) VALUES(@Descripcion, @Estado)
+	COMMIT TRANSACTION TRANSAC
+		  SELECT 0 AS CodeError, '' AS MsgError
+		END TRY
+
+BEGIN CATCH
+	SELECT 
+         ERROR_NUMBER() AS CodeError,
+		 ERROR_MESSAGE() AS MsgError
+   ROLLBACK TRANSACTION TRANSAC
+END CATCH
+END
