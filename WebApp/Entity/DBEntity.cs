@@ -1,10 +1,9 @@
-﻿using System;
-
-namespace Entity
+﻿namespace Entity
 {
     public class DBEntity
     {
         public int CodeError { get; set; }
-        public String MsgError { get; set; }
+        public string MsgError { get; set; }
+
     }
 }

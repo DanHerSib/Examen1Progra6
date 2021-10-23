@@ -11,7 +11,8 @@
     export function OnClickEliminar(id) {
         ComfirmAlert("Desea eliminar el registro?", "Eliminar", "warning", "#3085d6", "d33")
             .then(result => {
-                if (result.isConfirmed) {
+                if (result.isConfirmed)
+                {
                     window.location.href = "TipoInquilino/Grid?handler=Eliminar&id=" + id;
                 }
             });
