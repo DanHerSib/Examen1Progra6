@@ -5,7 +5,7 @@ AS BEGIN
 	SET NOCOUNT ON
 		BEGIN TRANSACTION TRANSAC
 			BEGIN TRY
-			    DELETE FROM dbo.TipoInquilino WHERE @Id_TipoInquilino = @Id_TipoInquilino
+			    DELETE FROM dbo.TipoInquilino WHERE Id_TipoInquilino = @Id_TipoInquilino
 		COMMIT TRANSACTION TRANSAC
 				SELECT 0 AS CodeError, '' AS MsgError
 			END TRY
